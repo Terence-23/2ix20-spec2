@@ -112,9 +112,9 @@ CapacityNotExceeded == ~CapacityExceeded
 \* Replace FALSE by your own formalisation of each property.
 
 \* The outer door can only be locked if it is closed.
-OuterDoorLocked == ~outerDoorOpen
+OuterDoorLocked == [](~outerDoorLocked \/ ~outerDoorOpen)
 \* The vertical ram is only used when the outer door is closed and locked.
-RamOuterDoor == OuterDoorLocked
+RamOuterDoor == [](~ramExtended \/ OuterDoorLocked)
 \* Every time the trash bin is full, it is eventually not full anymore.
 TrashEmptied == Full ~> ~Full
 \* An unauthorized user cannot open the outer door.
@@ -126,7 +126,7 @@ UserTrash == ([]<> (userTrash > 0)) /\ ([]<> (userTrash = 0))
 \* Every time the user has trash, they can deposit their trash.
 UserTrashDeposited == [](userTrash > 0 ~> userTrash = 0)
 \* Every time the truck is requested for the trash bin, the truck has eventually emptied the bin.
-TruckEmpties == truckCommands # << >> ~> truckCommands = << >> 
+TruckEmpties == truckCommands # << >> ~> Trash = 0
 
 end define;
 
@@ -409,7 +409,7 @@ end process;
 
 
 end algorithm; *)
-\* BEGIN TRANSLATION (chksum(pcal) = "24b0c66e" /\ chksum(tla) = "56c63aa2")
+\* BEGIN TRANSLATION (chksum(pcal) = "9e25691a" /\ chksum(tla) = "324c66b9")
 \* Process variable perm of process userProcess at line 227 col 3 changed to perm_
 CONSTANT defaultInitValue
 VARIABLES outerDoorOpen, outerDoorLocked, trapDoorOpen, ramExtended, 
@@ -483,9 +483,9 @@ CapacityNotExceeded == ~CapacityExceeded
 
 
 
-OuterDoorLocked == ~outerDoorOpen
+OuterDoorLocked == [](~outerDoorLocked \/ ~outerDoorOpen)
 
-RamOuterDoor == OuterDoorLocked
+RamOuterDoor == [](~ramExtended \/ OuterDoorLocked)
 
 TrashEmptied == Full ~> ~Full
 
@@ -497,7 +497,7 @@ UserTrash == ([]<> (userTrash > 0)) /\ ([]<> (userTrash = 0))
 
 UserTrashDeposited == [](userTrash > 0 ~> userTrash = 0)
 
-TruckEmpties == truckCommands # << >> ~> truckCommands = << >>
+TruckEmpties == truckCommands # << >> ~> Trash = 0
 
 VARIABLES perm_, req, command, scan, perm
 
@@ -1103,4 +1103,4 @@ Spec == Init /\ [][Next]_vars
 
 =============================================================================
 \* Modification History
-\* Last modified Wed Sep 30 18:51:48 CEST 2026 by jerzy
+\* Last modified Fri Oct 02 09:44:40 CEST 2026 by jerzy
