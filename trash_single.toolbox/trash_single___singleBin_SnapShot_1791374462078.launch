@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.lamport.tla.toolbox.tool.tlc.modelCheck">
-    <stringAttribute key="configurationName" value="singleBin"/>
+    <stringAttribute key="configurationName" value="singleBin_SnapShot_1791374462078"/>
     <intAttribute key="distributedFPSetCount" value="0"/>
     <stringAttribute key="distributedNetworkInterface" value="100.64.0.3"/>
     <intAttribute key="distributedNodesCount" value="1"/>
     <stringAttribute key="distributedTLC" value="off"/>
-    <intAttribute key="fpIndex" value="24"/>
+    <intAttribute key="fpIndex" value="106"/>
     <intAttribute key="maxHeapSize" value="25"/>
     <stringAttribute key="modelBehaviorInit" value=""/>
     <stringAttribute key="modelBehaviorNext" value=""/>
@@ -16,11 +16,11 @@
     <booleanAttribute key="modelCorrectnessCheckDeadlock" value="true"/>
     <listAttribute key="modelCorrectnessInvariants"/>
     <listAttribute key="modelCorrectnessProperties">
-        <listEntry value="1TruckEmpties"/>
+        <listEntry value="0TruckEmpties"/>
         <listEntry value="1UserTrashDeposited"/>
-        <listEntry value="1UserTrash"/>
+        <listEntry value="0UserTrash"/>
         <listEntry value="0AuthorizedOpenOnly"/>
-        <listEntry value="1TrashEmptied"/>
+        <listEntry value="0TrashEmptied"/>
         <listEntry value="0RamOuterDoor"/>
         <listEntry value="0OuterDoorLocked"/>
     </listAttribute>
@@ -32,14 +32,11 @@
         <listEntry value="MaxCapacity;;6;0;0"/>
         <listEntry value="MaxUserTrash;;2;0;0"/>
         <listEntry value="NumBins;;1;0;0"/>
+        <listEntry value="defaultInitValue;;0;0;0"/>
     </listAttribute>
     <intAttribute key="modelVersion" value="20191005"/>
     <intAttribute key="numberOfWorkers" value="8"/>
     <stringAttribute key="result.mail.address" value=""/>
     <stringAttribute key="specName" value="trash_single"/>
     <stringAttribute key="tlcResourcesProfile" value="local custom"/>
-    <listAttribute key="traceExploreExpressions">
-        <listEntry value="1Trash"/>
-        <listEntry value="1Full"/>
-    </listAttribute>
 </launchConfiguration>

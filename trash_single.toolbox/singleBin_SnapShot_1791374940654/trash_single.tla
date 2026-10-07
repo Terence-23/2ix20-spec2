@@ -288,7 +288,7 @@ end process;
 \* Remodel it to react to requests and empty the trash bin!
 fair process truckProcess \in Trucks
 variables
-    command = [command |-> "idle", bin |-> 1];
+    command;
 begin
   TruckStart:
     \* Implement behaviour
@@ -409,8 +409,9 @@ end process;
 
 
 end algorithm; *)
-\* BEGIN TRANSLATION (chksum(pcal) = "436d09c6" /\ chksum(tla) = "f1a33806")
+\* BEGIN TRANSLATION (chksum(pcal) = "e9d16c02" /\ chksum(tla) = "59f24816")
 \* Process variable perm of process userProcess at line 227 col 3 changed to perm_
+CONSTANT defaultInitValue
 VARIABLES outerDoorOpen, outerDoorLocked, trapDoorOpen, ramExtended, 
           trashInTop, trashCompressed, trashUncompressed, trashCapacity, 
           trapDestroyed, userTrash, binCommand, binSensor, scans, permissions, 
@@ -535,7 +536,7 @@ Init == (* Global variables *)
         (* Process serverProcess *)
         /\ req = [user |-> 0]
         (* Process truckProcess *)
-        /\ command = [self \in Trucks |-> [command |-> "idle", bin |-> 1]]
+        /\ command = [self \in Trucks |-> defaultInitValue]
         (* Process controlProcess *)
         /\ scan = [user |-> 0, bin |-> 0]
         /\ perm = [user |-> 0, permission |-> FALSE]
@@ -1107,4 +1108,4 @@ Spec == /\ Init /\ [][Next]_vars
 
 =============================================================================
 \* Modification History
-\* Last modified Wed Oct 07 14:12:20 CEST 2026 by jerzy
+\* Last modified Wed Oct 07 14:08:50 CEST 2026 by jerzy

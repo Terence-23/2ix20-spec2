@@ -1,31 +1,31 @@
 ---- MODULE MC ----
-EXTENDS trash_single, TLC
+EXTENDS trash_multiple, TLC
 
 \* CONSTANT definitions @modelParameterConstants:0NumUsers
-const_1791375144633334000 == 
-1
+const_17913732414922000 == 
+3
 ----
 
 \* CONSTANT definitions @modelParameterConstants:1NumTrucks
-const_1791375144633335000 == 
-1
+const_17913732414923000 == 
+2
 ----
 
 \* CONSTANT definitions @modelParameterConstants:2MaxCapacity
-const_1791375144633336000 == 
+const_17913732414924000 == 
 6
 ----
 
 \* CONSTANT definitions @modelParameterConstants:3MaxUserTrash
-const_1791375144633337000 == 
+const_17913732414935000 == 
 2
 ----
 
 \* CONSTANT definitions @modelParameterConstants:4NumBins
-const_1791375144633338000 == 
-1
+const_17913732414936000 == 
+3
 ----
 
 =============================================================================
 \* Modification History
-\* Created Wed Oct 07 14:12:24 CEST 2026 by jerzy
+\* Created Wed Oct 07 13:40:41 CEST 2026 by jerzy

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.lamport.tla.toolbox.tool.tlc.modelCheck">
-    <stringAttribute key="configurationName" value="singleBin"/>
+    <stringAttribute key="configurationName" value="singleBin_SnapShot_1791375153695"/>
     <intAttribute key="distributedFPSetCount" value="0"/>
     <stringAttribute key="distributedNetworkInterface" value="100.64.0.3"/>
     <intAttribute key="distributedNodesCount" value="1"/>
