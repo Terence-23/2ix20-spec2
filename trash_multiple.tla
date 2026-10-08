@@ -135,7 +135,7 @@ UserTrash == \A u \in Users: []<>(userTrash[u] > 0) /\ []<>(userTrash[u] = 0)
 \* For each user, every time they have trash they can deposit their trash.
 UserTrashDeposited == \A u \in Users: [](userTrash[u] ~> userTrash[u] = 0)
 \* For each trash bin, every time a truck is requested for it, a truck has eventually emptied it.
-TruckEmpties == FALSE
+TruckEmpties == \A bin \in Bins: [](Full(bin) => <>(~Full(bin)))
 
 end define;
 
@@ -171,7 +171,7 @@ end macro
 \*****************************
 \* Process for a bin
 \*****************************
-process binProcess \in Bins
+fair process binProcess \in Bins
 begin
   BinWaitForCommand:
     while TRUE do
@@ -231,7 +231,7 @@ end process;
 \*****************************
 \* Process for a user
 \*****************************
-process userProcess \in Users
+fair process userProcess \in Users
 variables
   perm = [user |-> 0, bin |-> 0, granted |-> FALSE],
   selectedBin = 0
@@ -275,7 +275,7 @@ end process;
 \*****************************
 \* Process for a server
 \*****************************
-process serverProcess = Server
+fair process serverProcess = Server
 variables
   req = [user |-> 0]
 begin
@@ -295,10 +295,26 @@ end process;
 \*****************************
 \* DUMMY truck process type.
 \* Remodel it to react to requests and empty the requested trash bin!
-process truckProcess \in Trucks
+fair process truckProcess \in Trucks
 begin
   TruckStart:
-    \* Implement behaviour
+    while TRUE do 
+        ReadCommand:
+        \*print("wait call");
+        read(truckCommands, command);
+        \* await trucking
+        \* trucking:=TRUE;
+        
+        Execute:
+        \*print("empty truck");
+        waitBin();
+        binCommand:=[command |-> "empty"];
+        WaitBinTruck:
+        waitBin();
+        trucking:=[truckProcess|->FALSE];
+    
+    end while;
+       
     skip;
 end process;
 
@@ -308,11 +324,87 @@ end process;
 \*****************************
 \* DUMMY main control process type.
 \* Remodel it to control all trash bins in the system and handle requests by users!
-process controlProcess = Control
+fair process controlProcess = Control
 begin
   ControlStart:
-    \* Implement behaviour
-    skip;
+        while TRUE do
+        \*if scans # <<>> then 
+        \* request auth
+            ReadCard:
+            \*print("reading card");
+            read(scans, scan);
+            AskServer:
+            \*print("ask srv");
+            write(serverRequests, [user |-> scan.user]);
+            WaitServer:
+            \*print("wait srv");
+            read(serverResponses, perm);
+            CheckPerm: 
+            \*print("checking");
+            \*print(perm.permission);
+            if ~perm.permission then
+                ForbidUser:
+                \*print("forbidden");
+                write(permissions, [user |-> scan.user, granted |-> perm.permission, bin |-> scan.bin]);
+                \* unauthorized, abort
+                goto ControlStart;
+            end if;
+            AllowUser:
+            \*print("open");
+            binCommand := [command |-> "change_outer_lock", open |-> TRUE];
+            WaitBin1:
+            waitBin();
+            write(permissions, [user |-> scan.user, granted |-> perm.permission, bin |-> scan.bin]);
+            
+            WaitDoorClosed:
+            \*print("wait closed");
+            await binSensor.sensor = "outer_door_closed";
+            binSensor.sensor := "idle";
+            
+            \* lock door
+            LockDoor:
+            waitBin();
+            \*print("lock");
+            binCommand := [command |-> "change_outer_lock", open |-> FALSE];
+              
+            \* open trapdoor
+            Trap:
+            waitBin();
+            \*print("drop");
+            binCommand := [command |-> "change_trap_door", open |-> TRUE];
+            
+            \* ram
+            Ram:
+            waitBin();
+            binCommand := [command |-> "change_ram", open |-> TRUE];
+            
+            \* unram
+            UnRam:
+            waitBin();
+            binCommand:= [command |-> "change_ram", open |-> FALSE];            
+            \* close trap
+            UnTrap:
+            waitBin();
+            \*print("undrop");
+            binCommand:= [command |-> "change_trap_door", open |-> FALSE];
+            
+            \* maybe empty
+            Empty:
+            waitBin();
+            if Full then 
+                \*print("call truck");
+                write(truckCommands, [command |-> "empty", bin |-> scan.bin]);
+                \* WaitT1:
+                \* await trucking;
+                trucking := TRUE;
+                WaitT2:
+                await ~trucking;
+            end if;
+
+        \*end if;
+    
+    end while;
+
 end process;
 
 
@@ -744,4 +836,4 @@ Spec == Init /\ [][Next]_vars
 
 =============================================================================
 \* Modification History
-\* Last modified Fri Oct 02 10:03:34 CEST 2026 by jerzy
+\* Last modified Wed Oct 07 14:49:19 CEST 2026 by jerzy
