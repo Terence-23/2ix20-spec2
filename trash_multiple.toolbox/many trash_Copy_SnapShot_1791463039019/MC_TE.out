@@ -1,0 +1,113 @@
+@!@!@STARTMSG 2262:0 @!@!@
+TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)
+@!@!@ENDMSG 2262 @!@!@
+@!@!@STARTMSG 2187:0 @!@!@
+Running breadth-first search Model-Checking with fp 37 and seed 5707991318138494639 with 12 workers on 16 cores with 7381MB heap and 16601MB offheap memory [pid: 16331] (Linux 7.2.8-arch1-2 amd64, AdoptOpenJDK 14.0.1 x86_64, OffHeapDiskFPSet, DiskStateQueue).
+@!@!@ENDMSG 2187 @!@!@
+@!@!@STARTMSG 2220:0 @!@!@
+Starting SANY...
+@!@!@ENDMSG 2220 @!@!@
+Parsing file /home/jerzy/Documents/TUE/2ix20-spec2/trash_multiple.toolbox/many trash_Copy/MC.tla
+Parsing file /home/jerzy/Documents/TUE/2ix20-spec2/trash_multiple.toolbox/many trash_Copy/trash_multiple.tla
+Parsing file /home/jerzy/Downloads/toolbox/plugins/org.lamport.tlatools_1.0.0.202408081326/tla2sany/StandardModules/TLC.tla
+Parsing file /home/jerzy/Documents/TUE/2ix20-spec2/trash_multiple.toolbox/many trash_Copy/trash_data.tla
+Parsing file /home/jerzy/Downloads/toolbox/plugins/org.lamport.tlatools_1.0.0.202408081326/tla2sany/StandardModules/Integers.tla
+Parsing file /home/jerzy/Downloads/toolbox/plugins/org.lamport.tlatools_1.0.0.202408081326/tla2sany/StandardModules/Sequences.tla
+Parsing file /home/jerzy/Downloads/toolbox/plugins/org.lamport.tlatools_1.0.0.202408081326/tla2sany/StandardModules/FiniteSets.tla
+Parsing file /home/jerzy/Downloads/toolbox/plugins/org.lamport.tlatools_1.0.0.202408081326/tla2sany/StandardModules/Naturals.tla
+Semantic processing of module Naturals
+Semantic processing of module Integers
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module trash_data
+Semantic processing of module trash_multiple
+Semantic processing of module MC
+@!@!@STARTMSG 2219:0 @!@!@
+SANY finished.
+@!@!@ENDMSG 2219 @!@!@
+@!@!@STARTMSG 2185:0 @!@!@
+Starting... (2026-10-08 14:22:35)
+@!@!@ENDMSG 2185 @!@!@
+@!@!@STARTMSG 2212:0 @!@!@
+Implied-temporal checking--satisfiability problem has 2 branches.
+@!@!@ENDMSG 2212 @!@!@
+@!@!@STARTMSG 2189:0 @!@!@
+Computing initial states...
+@!@!@ENDMSG 2189 @!@!@
+@!@!@STARTMSG 2190:0 @!@!@
+Finished computing initial states: 1 distinct state generated at 2026-10-08 14:22:35.
+@!@!@ENDMSG 2190 @!@!@
+@!@!@STARTMSG 2192:0 @!@!@
+Checking 2 branches of temporal properties for the current state space with 112724 total distinct states at (2026-10-08 14:22:38)
+@!@!@ENDMSG 2192 @!@!@
+@!@!@STARTMSG 2267:0 @!@!@
+Finished checking temporal properties in 00s at 2026-10-08 14:22:39
+@!@!@ENDMSG 2267 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(43) at 2026-10-08 14:22:39: 215,256 states generated (215,256 s/min), 56,362 distinct states found (56,362 ds/min), 2,367 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2192:0 @!@!@
+Checking 2 branches of temporal properties for the current state space with 2970998 total distinct states at (2026-10-08 14:23:39)
+@!@!@ENDMSG 2192 @!@!@
+@!@!@STARTMSG 2267:0 @!@!@
+Finished checking temporal properties in 30s at 2026-10-08 14:24:10
+@!@!@ENDMSG 2267 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(126) at 2026-10-08 14:24:10: 6,013,945 states generated (5,798,689 s/min), 1,485,499 distinct states found (1,429,137 ds/min), 53,366 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(162) at 2026-10-08 14:25:10: 11,848,425 states generated (5,834,480 s/min), 2,923,268 distinct states found (1,437,769 ds/min), 109,263 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(179) at 2026-10-08 14:26:10: 17,660,384 states generated (5,811,959 s/min), 4,268,626 distinct states found (1,345,358 ds/min), 82,139 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2192:0 @!@!@
+Checking 2 branches of temporal properties for the current state space with 11400580 total distinct states at (2026-10-08 14:27:10)
+@!@!@ENDMSG 2192 @!@!@
+@!@!@STARTMSG 2267:0 @!@!@
+Finished checking temporal properties in 01min 58s at 2026-10-08 14:29:09
+@!@!@ENDMSG 2267 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(206) at 2026-10-08 14:29:09: 23,466,396 states generated (5,806,012 s/min), 5,700,290 distinct states found (1,431,664 ds/min), 121,860 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(220) at 2026-10-08 14:30:09: 29,125,902 states generated (5,659,506 s/min), 6,957,745 distinct states found (1,257,455 ds/min), 66,095 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(250) at 2026-10-08 14:31:09: 34,850,875 states generated (5,724,973 s/min), 8,345,506 distinct states found (1,387,761 ds/min), 109,298 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(272) at 2026-10-08 14:32:09: 40,403,160 states generated (5,552,285 s/min), 9,573,652 distinct states found (1,228,146 ds/min), 15,817 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(408) at 2026-10-08 14:33:06: 45,702,721 states generated, 10,757,120 distinct states found, 0 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2192:0 @!@!@
+Checking 2 branches of temporal properties for the complete state space with 21514240 total distinct states at (2026-10-08 14:33:06)
+@!@!@ENDMSG 2192 @!@!@
+@!@!@STARTMSG 2267:0 @!@!@
+Finished checking temporal properties in 04min 09s at 2026-10-08 14:37:15
+@!@!@ENDMSG 2267 @!@!@
+@!@!@STARTMSG 2193:0 @!@!@
+Model checking completed. No error has been found.
+  Estimates of the probability that TLC did not check all reachable states
+  because two distinct states had the same fingerprint:
+  calculated (optimistic):  val = 2.0E-5
+  based on the actual fingerprints:  val = 4.8E-6
+@!@!@ENDMSG 2193 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(408) at 2026-10-08 14:37:17: 45,702,721 states generated (3,108,327 s/min), 10,757,120 distinct states found (731,611 ds/min), 0 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2199:0 @!@!@
+45702721 states generated, 10757120 distinct states found, 0 states left on queue.
+@!@!@ENDMSG 2199 @!@!@
+@!@!@STARTMSG 2194:0 @!@!@
+The depth of the complete state graph search is 408.
+@!@!@ENDMSG 2194 @!@!@
+@!@!@STARTMSG 2268:0 @!@!@
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 7 and the 95th percentile is 3).
+@!@!@ENDMSG 2268 @!@!@
+@!@!@STARTMSG 2186:0 @!@!@
+Finished in 882698ms at (2026-10-08 14:37:17)
+@!@!@ENDMSG 2186 @!@!@

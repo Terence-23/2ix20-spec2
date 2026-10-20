@@ -18,7 +18,7 @@
 		<link>
 			<name>trash_data.tla</name>
 			<type>1</type>
-			<location>/home/jerzy/Documents/programming/TUE/2ix20/trash_data.tla</location>
+			<locationURI>PARENT-1-PROJECT_LOC/trash_data.tla</locationURI>
 		</link>
 		<link>
 			<name>trash_multiple.tla</name>

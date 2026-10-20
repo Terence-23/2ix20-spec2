@@ -1,0 +1,733 @@
+@!@!@STARTMSG 2262:0 @!@!@
+TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)
+@!@!@ENDMSG 2262 @!@!@
+@!@!@STARTMSG 2187:0 @!@!@
+Running breadth-first search Model-Checking with fp 19 and seed -9142637595032388640 with 12 workers on 16 cores with 7381MB heap and 16601MB offheap memory [pid: 8450] (Linux 7.2.8-arch1-2 amd64, AdoptOpenJDK 14.0.1 x86_64, OffHeapDiskFPSet, DiskStateQueue).
+@!@!@ENDMSG 2187 @!@!@
+@!@!@STARTMSG 2220:0 @!@!@
+Starting SANY...
+@!@!@ENDMSG 2220 @!@!@
+Parsing file /home/jerzy/Documents/TUE/2ix20-spec2/trash_multiple.toolbox/many trash_Copy/MC.tla
+Parsing file /home/jerzy/Documents/TUE/2ix20-spec2/trash_multiple.toolbox/many trash_Copy/trash_multiple.tla
+Parsing file /home/jerzy/Downloads/toolbox/plugins/org.lamport.tlatools_1.0.0.202408081326/tla2sany/StandardModules/TLC.tla
+Parsing file /home/jerzy/Documents/TUE/2ix20-spec2/trash_multiple.toolbox/many trash_Copy/trash_data.tla
+Parsing file /home/jerzy/Downloads/toolbox/plugins/org.lamport.tlatools_1.0.0.202408081326/tla2sany/StandardModules/Integers.tla
+Parsing file /home/jerzy/Downloads/toolbox/plugins/org.lamport.tlatools_1.0.0.202408081326/tla2sany/StandardModules/Sequences.tla
+Parsing file /home/jerzy/Downloads/toolbox/plugins/org.lamport.tlatools_1.0.0.202408081326/tla2sany/StandardModules/FiniteSets.tla
+Parsing file /home/jerzy/Downloads/toolbox/plugins/org.lamport.tlatools_1.0.0.202408081326/tla2sany/StandardModules/Naturals.tla
+Semantic processing of module Naturals
+Semantic processing of module Integers
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module trash_data
+Semantic processing of module trash_multiple
+Semantic processing of module MC
+@!@!@STARTMSG 2219:0 @!@!@
+SANY finished.
+@!@!@ENDMSG 2219 @!@!@
+@!@!@STARTMSG 2185:0 @!@!@
+Starting... (2026-10-08 12:29:44)
+@!@!@ENDMSG 2185 @!@!@
+@!@!@STARTMSG 2212:0 @!@!@
+Implied-temporal checking--satisfiability problem has 7 branches.
+@!@!@ENDMSG 2212 @!@!@
+@!@!@STARTMSG 2189:0 @!@!@
+Computing initial states...
+@!@!@ENDMSG 2189 @!@!@
+@!@!@STARTMSG 2190:0 @!@!@
+Finished computing initial states: 1 distinct state generated at 2026-10-08 12:29:44.
+@!@!@ENDMSG 2190 @!@!@
+@!@!@STARTMSG 2110:1 @!@!@
+Invariant AuthorizedOpenOnly is violated.
+@!@!@ENDMSG 2110 @!@!@
+@!@!@STARTMSG 2121:1 @!@!@
+The behavior up to this point is:
+@!@!@ENDMSG 2121 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+1: <Initial predicate>
+/\ trapDoorOpen = <<FALSE, FALSE>>
+/\ binSensor = <<[sensor |-> "idle"], [sensor |-> "idle"]>>
+/\ serverRequests = <<>>
+/\ truckCommands = <<>>
+/\ binCalled = <<FALSE, FALSE>>
+/\ selectedBin = (3 :> 0 @@ 4 :> 0)
+/\ truckBusy = (5 :> FALSE @@ 6 :> FALSE)
+/\ ramExtended = <<FALSE, FALSE>>
+/\ trapDestroyed = <<FALSE, FALSE>>
+/\ userTrash = (3 :> 0 @@ 4 :> 0)
+/\ command = (5 :> [bin |-> 1, command |-> "idle"] @@ 6 :> [bin |-> 1, command |-> "idle"])
+/\ resp = [user |-> 0, permission |-> FALSE]
+/\ pc = ( 0 :> "ControlStart" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserNextIteration" @@
+  4 :> "UserNextIteration" @@
+  5 :> "TruckStart" @@
+  6 :> "TruckStart" @@
+  7 :> "ServerNextIteration" )
+/\ serverResponses = <<>>
+/\ grantedPerm = {}
+/\ permissions = (3 :> <<>> @@ 4 :> <<>>)
+/\ req = [user |-> 0]
+/\ outerDoorLocked = <<TRUE, TRUE>>
+/\ scans = <<>>
+/\ binCommand = << [command |-> "finished", open |-> FALSE],
+   [command |-> "finished", open |-> FALSE] >>
+/\ scan = [bin |-> 0, user |-> 0]
+/\ outerDoorOpen = <<FALSE, FALSE>>
+/\ truckCommand = ( 5 :> [bin |-> 1, command |-> "emptied"] @@
+  6 :> [bin |-> 1, command |-> "emptied"] )
+/\ perm = ( 3 :> [bin |-> 0, user |-> 0, granted |-> FALSE] @@
+  4 :> [bin |-> 0, user |-> 0, granted |-> FALSE] )
+/\ trashInTop = <<0, 0>>
+/\ trashCompressed = <<0, 0>>
+/\ trashUncompressed = <<0, 0>>
+/\ trashCapacity = <<3, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+2: <ControlStart line 880, col 17 to line 889, col 72 of module trash_multiple>
+/\ trapDoorOpen = <<FALSE, FALSE>>
+/\ binSensor = <<[sensor |-> "idle"], [sensor |-> "idle"]>>
+/\ serverRequests = <<>>
+/\ truckCommands = <<>>
+/\ binCalled = <<FALSE, FALSE>>
+/\ selectedBin = (3 :> 0 @@ 4 :> 0)
+/\ truckBusy = (5 :> FALSE @@ 6 :> FALSE)
+/\ ramExtended = <<FALSE, FALSE>>
+/\ trapDestroyed = <<FALSE, FALSE>>
+/\ userTrash = (3 :> 0 @@ 4 :> 0)
+/\ command = (5 :> [bin |-> 1, command |-> "idle"] @@ 6 :> [bin |-> 1, command |-> "idle"])
+/\ resp = [user |-> 0, permission |-> FALSE]
+/\ pc = ( 0 :> "ReadCard" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserNextIteration" @@
+  4 :> "UserNextIteration" @@
+  5 :> "TruckStart" @@
+  6 :> "TruckStart" @@
+  7 :> "ServerNextIteration" )
+/\ serverResponses = <<>>
+/\ grantedPerm = {}
+/\ permissions = (3 :> <<>> @@ 4 :> <<>>)
+/\ req = [user |-> 0]
+/\ outerDoorLocked = <<TRUE, TRUE>>
+/\ scans = <<>>
+/\ binCommand = << [command |-> "finished", open |-> FALSE],
+   [command |-> "finished", open |-> FALSE] >>
+/\ scan = [bin |-> 0, user |-> 0]
+/\ outerDoorOpen = <<FALSE, FALSE>>
+/\ truckCommand = ( 5 :> [bin |-> 1, command |-> "emptied"] @@
+  6 :> [bin |-> 1, command |-> "emptied"] )
+/\ perm = ( 3 :> [bin |-> 0, user |-> 0, granted |-> FALSE] @@
+  4 :> [bin |-> 0, user |-> 0, granted |-> FALSE] )
+/\ trashInTop = <<0, 0>>
+/\ trashCompressed = <<0, 0>>
+/\ trashUncompressed = <<0, 0>>
+/\ trashCapacity = <<3, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+3: <UserNextIteration line 643, col 28 to line 657, col 65 of module trash_multiple>
+/\ trapDoorOpen = <<FALSE, FALSE>>
+/\ binSensor = <<[sensor |-> "idle"], [sensor |-> "idle"]>>
+/\ serverRequests = <<>>
+/\ truckCommands = <<>>
+/\ binCalled = <<FALSE, FALSE>>
+/\ selectedBin = (3 :> 0 @@ 4 :> 0)
+/\ truckBusy = (5 :> FALSE @@ 6 :> FALSE)
+/\ ramExtended = <<FALSE, FALSE>>
+/\ trapDestroyed = <<FALSE, FALSE>>
+/\ userTrash = (3 :> 0 @@ 4 :> 0)
+/\ command = (5 :> [bin |-> 1, command |-> "idle"] @@ 6 :> [bin |-> 1, command |-> "idle"])
+/\ resp = [user |-> 0, permission |-> FALSE]
+/\ pc = ( 0 :> "ReadCard" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserNewTrash" @@
+  4 :> "UserNextIteration" @@
+  5 :> "TruckStart" @@
+  6 :> "TruckStart" @@
+  7 :> "ServerNextIteration" )
+/\ serverResponses = <<>>
+/\ grantedPerm = {}
+/\ permissions = (3 :> <<>> @@ 4 :> <<>>)
+/\ req = [user |-> 0]
+/\ outerDoorLocked = <<TRUE, TRUE>>
+/\ scans = <<>>
+/\ binCommand = << [command |-> "finished", open |-> FALSE],
+   [command |-> "finished", open |-> FALSE] >>
+/\ scan = [bin |-> 0, user |-> 0]
+/\ outerDoorOpen = <<FALSE, FALSE>>
+/\ truckCommand = ( 5 :> [bin |-> 1, command |-> "emptied"] @@
+  6 :> [bin |-> 1, command |-> "emptied"] )
+/\ perm = ( 3 :> [bin |-> 0, user |-> 0, granted |-> FALSE] @@
+  4 :> [bin |-> 0, user |-> 0, granted |-> FALSE] )
+/\ trashInTop = <<0, 0>>
+/\ trashCompressed = <<0, 0>>
+/\ trashUncompressed = <<0, 0>>
+/\ trashCapacity = <<3, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+4: <ServerNextIteration line 792, col 24 to line 803, col 61 of module trash_multiple>
+/\ trapDoorOpen = <<FALSE, FALSE>>
+/\ binSensor = <<[sensor |-> "idle"], [sensor |-> "idle"]>>
+/\ serverRequests = <<>>
+/\ truckCommands = <<>>
+/\ binCalled = <<FALSE, FALSE>>
+/\ selectedBin = (3 :> 0 @@ 4 :> 0)
+/\ truckBusy = (5 :> FALSE @@ 6 :> FALSE)
+/\ ramExtended = <<FALSE, FALSE>>
+/\ trapDestroyed = <<FALSE, FALSE>>
+/\ userTrash = (3 :> 0 @@ 4 :> 0)
+/\ command = (5 :> [bin |-> 1, command |-> "idle"] @@ 6 :> [bin |-> 1, command |-> "idle"])
+/\ resp = [user |-> 0, permission |-> FALSE]
+/\ pc = ( 0 :> "ReadCard" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserNewTrash" @@
+  4 :> "UserNextIteration" @@
+  5 :> "TruckStart" @@
+  6 :> "TruckStart" @@
+  7 :> "ServerAwaitRequest" )
+/\ serverResponses = <<>>
+/\ grantedPerm = {}
+/\ permissions = (3 :> <<>> @@ 4 :> <<>>)
+/\ req = [user |-> 0]
+/\ outerDoorLocked = <<TRUE, TRUE>>
+/\ scans = <<>>
+/\ binCommand = << [command |-> "finished", open |-> FALSE],
+   [command |-> "finished", open |-> FALSE] >>
+/\ scan = [bin |-> 0, user |-> 0]
+/\ outerDoorOpen = <<FALSE, FALSE>>
+/\ truckCommand = ( 5 :> [bin |-> 1, command |-> "emptied"] @@
+  6 :> [bin |-> 1, command |-> "emptied"] )
+/\ perm = ( 3 :> [bin |-> 0, user |-> 0, granted |-> FALSE] @@
+  4 :> [bin |-> 0, user |-> 0, granted |-> FALSE] )
+/\ trashInTop = <<0, 0>>
+/\ trashCompressed = <<0, 0>>
+/\ trashUncompressed = <<0, 0>>
+/\ trashCapacity = <<3, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+5: <UserNewTrash line 772, col 23 to line 784, col 78 of module trash_multiple>
+/\ trapDoorOpen = <<FALSE, FALSE>>
+/\ binSensor = <<[sensor |-> "idle"], [sensor |-> "idle"]>>
+/\ serverRequests = <<>>
+/\ truckCommands = <<>>
+/\ binCalled = <<FALSE, FALSE>>
+/\ selectedBin = (3 :> 0 @@ 4 :> 0)
+/\ truckBusy = (5 :> FALSE @@ 6 :> FALSE)
+/\ ramExtended = <<FALSE, FALSE>>
+/\ trapDestroyed = <<FALSE, FALSE>>
+/\ userTrash = (3 :> 1 @@ 4 :> 0)
+/\ command = (5 :> [bin |-> 1, command |-> "idle"] @@ 6 :> [bin |-> 1, command |-> "idle"])
+/\ resp = [user |-> 0, permission |-> FALSE]
+/\ pc = ( 0 :> "ReadCard" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserScanCard" @@
+  4 :> "UserNextIteration" @@
+  5 :> "TruckStart" @@
+  6 :> "TruckStart" @@
+  7 :> "ServerAwaitRequest" )
+/\ serverResponses = <<>>
+/\ grantedPerm = {}
+/\ permissions = (3 :> <<>> @@ 4 :> <<>>)
+/\ req = [user |-> 0]
+/\ outerDoorLocked = <<TRUE, TRUE>>
+/\ scans = <<>>
+/\ binCommand = << [command |-> "finished", open |-> FALSE],
+   [command |-> "finished", open |-> FALSE] >>
+/\ scan = [bin |-> 0, user |-> 0]
+/\ outerDoorOpen = <<FALSE, FALSE>>
+/\ truckCommand = ( 5 :> [bin |-> 1, command |-> "emptied"] @@
+  6 :> [bin |-> 1, command |-> "emptied"] )
+/\ perm = ( 3 :> [bin |-> 0, user |-> 0, granted |-> FALSE] @@
+  4 :> [bin |-> 0, user |-> 0, granted |-> FALSE] )
+/\ trashInTop = <<0, 0>>
+/\ trashCompressed = <<0, 0>>
+/\ trashUncompressed = <<0, 0>>
+/\ trashCapacity = <<3, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+6: <UserScanCard line 659, col 23 to line 672, col 60 of module trash_multiple>
+/\ trapDoorOpen = <<FALSE, FALSE>>
+/\ binSensor = <<[sensor |-> "idle"], [sensor |-> "idle"]>>
+/\ serverRequests = <<>>
+/\ truckCommands = <<>>
+/\ binCalled = <<FALSE, FALSE>>
+/\ selectedBin = (3 :> 1 @@ 4 :> 0)
+/\ truckBusy = (5 :> FALSE @@ 6 :> FALSE)
+/\ ramExtended = <<FALSE, FALSE>>
+/\ trapDestroyed = <<FALSE, FALSE>>
+/\ userTrash = (3 :> 1 @@ 4 :> 0)
+/\ command = (5 :> [bin |-> 1, command |-> "idle"] @@ 6 :> [bin |-> 1, command |-> "idle"])
+/\ resp = [user |-> 0, permission |-> FALSE]
+/\ pc = ( 0 :> "ReadCard" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserAwaitScanResponse" @@
+  4 :> "UserNextIteration" @@
+  5 :> "TruckStart" @@
+  6 :> "TruckStart" @@
+  7 :> "ServerAwaitRequest" )
+/\ serverResponses = <<>>
+/\ grantedPerm = {}
+/\ permissions = (3 :> <<>> @@ 4 :> <<>>)
+/\ req = [user |-> 0]
+/\ outerDoorLocked = <<TRUE, TRUE>>
+/\ scans = <<[bin |-> 1, user |-> 3]>>
+/\ binCommand = << [command |-> "finished", open |-> FALSE],
+   [command |-> "finished", open |-> FALSE] >>
+/\ scan = [bin |-> 0, user |-> 0]
+/\ outerDoorOpen = <<FALSE, FALSE>>
+/\ truckCommand = ( 5 :> [bin |-> 1, command |-> "emptied"] @@
+  6 :> [bin |-> 1, command |-> "emptied"] )
+/\ perm = ( 3 :> [bin |-> 0, user |-> 0, granted |-> FALSE] @@
+  4 :> [bin |-> 0, user |-> 0, granted |-> FALSE] )
+/\ trashInTop = <<0, 0>>
+/\ trashCompressed = <<0, 0>>
+/\ trashUncompressed = <<0, 0>>
+/\ trashCapacity = <<3, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+7: <ReadCard line 891, col 13 to line 902, col 68 of module trash_multiple>
+/\ trapDoorOpen = <<FALSE, FALSE>>
+/\ binSensor = <<[sensor |-> "idle"], [sensor |-> "idle"]>>
+/\ serverRequests = <<>>
+/\ truckCommands = <<>>
+/\ binCalled = <<FALSE, FALSE>>
+/\ selectedBin = (3 :> 1 @@ 4 :> 0)
+/\ truckBusy = (5 :> FALSE @@ 6 :> FALSE)
+/\ ramExtended = <<FALSE, FALSE>>
+/\ trapDestroyed = <<FALSE, FALSE>>
+/\ userTrash = (3 :> 1 @@ 4 :> 0)
+/\ command = (5 :> [bin |-> 1, command |-> "idle"] @@ 6 :> [bin |-> 1, command |-> "idle"])
+/\ resp = [user |-> 0, permission |-> FALSE]
+/\ pc = ( 0 :> "AskServer" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserAwaitScanResponse" @@
+  4 :> "UserNextIteration" @@
+  5 :> "TruckStart" @@
+  6 :> "TruckStart" @@
+  7 :> "ServerAwaitRequest" )
+/\ serverResponses = <<>>
+/\ grantedPerm = {}
+/\ permissions = (3 :> <<>> @@ 4 :> <<>>)
+/\ req = [user |-> 0]
+/\ outerDoorLocked = <<TRUE, TRUE>>
+/\ scans = <<>>
+/\ binCommand = << [command |-> "finished", open |-> FALSE],
+   [command |-> "finished", open |-> FALSE] >>
+/\ scan = [bin |-> 1, user |-> 3]
+/\ outerDoorOpen = <<FALSE, FALSE>>
+/\ truckCommand = ( 5 :> [bin |-> 1, command |-> "emptied"] @@
+  6 :> [bin |-> 1, command |-> "emptied"] )
+/\ perm = ( 3 :> [bin |-> 0, user |-> 0, granted |-> FALSE] @@
+  4 :> [bin |-> 0, user |-> 0, granted |-> FALSE] )
+/\ trashInTop = <<0, 0>>
+/\ trashCompressed = <<0, 0>>
+/\ trashUncompressed = <<0, 0>>
+/\ trashCapacity = <<3, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+8: <AskServer line 904, col 14 to line 913, col 75 of module trash_multiple>
+/\ trapDoorOpen = <<FALSE, FALSE>>
+/\ binSensor = <<[sensor |-> "idle"], [sensor |-> "idle"]>>
+/\ serverRequests = <<[user |-> 3]>>
+/\ truckCommands = <<>>
+/\ binCalled = <<FALSE, FALSE>>
+/\ selectedBin = (3 :> 1 @@ 4 :> 0)
+/\ truckBusy = (5 :> FALSE @@ 6 :> FALSE)
+/\ ramExtended = <<FALSE, FALSE>>
+/\ trapDestroyed = <<FALSE, FALSE>>
+/\ userTrash = (3 :> 1 @@ 4 :> 0)
+/\ command = (5 :> [bin |-> 1, command |-> "idle"] @@ 6 :> [bin |-> 1, command |-> "idle"])
+/\ resp = [user |-> 0, permission |-> FALSE]
+/\ pc = ( 0 :> "WaitServer" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserAwaitScanResponse" @@
+  4 :> "UserNextIteration" @@
+  5 :> "TruckStart" @@
+  6 :> "TruckStart" @@
+  7 :> "ServerAwaitRequest" )
+/\ serverResponses = <<>>
+/\ grantedPerm = {}
+/\ permissions = (3 :> <<>> @@ 4 :> <<>>)
+/\ req = [user |-> 0]
+/\ outerDoorLocked = <<TRUE, TRUE>>
+/\ scans = <<>>
+/\ binCommand = << [command |-> "finished", open |-> FALSE],
+   [command |-> "finished", open |-> FALSE] >>
+/\ scan = [bin |-> 1, user |-> 3]
+/\ outerDoorOpen = <<FALSE, FALSE>>
+/\ truckCommand = ( 5 :> [bin |-> 1, command |-> "emptied"] @@
+  6 :> [bin |-> 1, command |-> "emptied"] )
+/\ perm = ( 3 :> [bin |-> 0, user |-> 0, granted |-> FALSE] @@
+  4 :> [bin |-> 0, user |-> 0, granted |-> FALSE] )
+/\ trashInTop = <<0, 0>>
+/\ trashCompressed = <<0, 0>>
+/\ trashUncompressed = <<0, 0>>
+/\ trashCapacity = <<3, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+9: <ServerAwaitRequest line 805, col 23 to line 819, col 73 of module trash_multiple>
+/\ trapDoorOpen = <<FALSE, FALSE>>
+/\ binSensor = <<[sensor |-> "idle"], [sensor |-> "idle"]>>
+/\ serverRequests = <<>>
+/\ truckCommands = <<>>
+/\ binCalled = <<FALSE, FALSE>>
+/\ selectedBin = (3 :> 1 @@ 4 :> 0)
+/\ truckBusy = (5 :> FALSE @@ 6 :> FALSE)
+/\ ramExtended = <<FALSE, FALSE>>
+/\ trapDestroyed = <<FALSE, FALSE>>
+/\ userTrash = (3 :> 1 @@ 4 :> 0)
+/\ command = (5 :> [bin |-> 1, command |-> "idle"] @@ 6 :> [bin |-> 1, command |-> "idle"])
+/\ resp = [user |-> 0, permission |-> FALSE]
+/\ pc = ( 0 :> "WaitServer" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserAwaitScanResponse" @@
+  4 :> "UserNextIteration" @@
+  5 :> "TruckStart" @@
+  6 :> "TruckStart" @@
+  7 :> "ServerNextIteration" )
+/\ serverResponses = <<[user |-> 3, permission |-> TRUE]>>
+/\ grantedPerm = {}
+/\ permissions = (3 :> <<>> @@ 4 :> <<>>)
+/\ req = [user |-> 3]
+/\ outerDoorLocked = <<TRUE, TRUE>>
+/\ scans = <<>>
+/\ binCommand = << [command |-> "finished", open |-> FALSE],
+   [command |-> "finished", open |-> FALSE] >>
+/\ scan = [bin |-> 1, user |-> 3]
+/\ outerDoorOpen = <<FALSE, FALSE>>
+/\ truckCommand = ( 5 :> [bin |-> 1, command |-> "emptied"] @@
+  6 :> [bin |-> 1, command |-> "emptied"] )
+/\ perm = ( 3 :> [bin |-> 0, user |-> 0, granted |-> FALSE] @@
+  4 :> [bin |-> 0, user |-> 0, granted |-> FALSE] )
+/\ trashInTop = <<0, 0>>
+/\ trashCompressed = <<0, 0>>
+/\ trashUncompressed = <<0, 0>>
+/\ trashCapacity = <<3, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+10: <WaitServer line 915, col 15 to line 926, col 70 of module trash_multiple>
+/\ trapDoorOpen = <<FALSE, FALSE>>
+/\ binSensor = <<[sensor |-> "idle"], [sensor |-> "idle"]>>
+/\ serverRequests = <<>>
+/\ truckCommands = <<>>
+/\ binCalled = <<FALSE, FALSE>>
+/\ selectedBin = (3 :> 1 @@ 4 :> 0)
+/\ truckBusy = (5 :> FALSE @@ 6 :> FALSE)
+/\ ramExtended = <<FALSE, FALSE>>
+/\ trapDestroyed = <<FALSE, FALSE>>
+/\ userTrash = (3 :> 1 @@ 4 :> 0)
+/\ command = (5 :> [bin |-> 1, command |-> "idle"] @@ 6 :> [bin |-> 1, command |-> "idle"])
+/\ resp = [user |-> 3, permission |-> TRUE]
+/\ pc = ( 0 :> "CheckPerm" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserAwaitScanResponse" @@
+  4 :> "UserNextIteration" @@
+  5 :> "TruckStart" @@
+  6 :> "TruckStart" @@
+  7 :> "ServerNextIteration" )
+/\ serverResponses = <<>>
+/\ grantedPerm = {}
+/\ permissions = (3 :> <<>> @@ 4 :> <<>>)
+/\ req = [user |-> 3]
+/\ outerDoorLocked = <<TRUE, TRUE>>
+/\ scans = <<>>
+/\ binCommand = << [command |-> "finished", open |-> FALSE],
+   [command |-> "finished", open |-> FALSE] >>
+/\ scan = [bin |-> 1, user |-> 3]
+/\ outerDoorOpen = <<FALSE, FALSE>>
+/\ truckCommand = ( 5 :> [bin |-> 1, command |-> "emptied"] @@
+  6 :> [bin |-> 1, command |-> "emptied"] )
+/\ perm = ( 3 :> [bin |-> 0, user |-> 0, granted |-> FALSE] @@
+  4 :> [bin |-> 0, user |-> 0, granted |-> FALSE] )
+/\ trashInTop = <<0, 0>>
+/\ trashCompressed = <<0, 0>>
+/\ trashUncompressed = <<0, 0>>
+/\ trashCapacity = <<3, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+11: <CheckPerm line 928, col 14 to line 939, col 42 of module trash_multiple>
+/\ trapDoorOpen = <<FALSE, FALSE>>
+/\ binSensor = <<[sensor |-> "idle"], [sensor |-> "idle"]>>
+/\ serverRequests = <<>>
+/\ truckCommands = <<>>
+/\ binCalled = <<FALSE, FALSE>>
+/\ selectedBin = (3 :> 1 @@ 4 :> 0)
+/\ truckBusy = (5 :> FALSE @@ 6 :> FALSE)
+/\ ramExtended = <<FALSE, FALSE>>
+/\ trapDestroyed = <<FALSE, FALSE>>
+/\ userTrash = (3 :> 1 @@ 4 :> 0)
+/\ command = (5 :> [bin |-> 1, command |-> "idle"] @@ 6 :> [bin |-> 1, command |-> "idle"])
+/\ resp = [user |-> 3, permission |-> TRUE]
+/\ pc = ( 0 :> "AllowUser" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserAwaitScanResponse" @@
+  4 :> "UserNextIteration" @@
+  5 :> "TruckStart" @@
+  6 :> "TruckStart" @@
+  7 :> "ServerNextIteration" )
+/\ serverResponses = <<>>
+/\ grantedPerm = {}
+/\ permissions = (3 :> <<>> @@ 4 :> <<>>)
+/\ req = [user |-> 3]
+/\ outerDoorLocked = <<TRUE, TRUE>>
+/\ scans = <<>>
+/\ binCommand = << [command |-> "finished", open |-> FALSE],
+   [command |-> "finished", open |-> FALSE] >>
+/\ scan = [bin |-> 1, user |-> 3]
+/\ outerDoorOpen = <<FALSE, FALSE>>
+/\ truckCommand = ( 5 :> [bin |-> 1, command |-> "emptied"] @@
+  6 :> [bin |-> 1, command |-> "emptied"] )
+/\ perm = ( 3 :> [bin |-> 0, user |-> 0, granted |-> FALSE] @@
+  4 :> [bin |-> 0, user |-> 0, granted |-> FALSE] )
+/\ trashInTop = <<0, 0>>
+/\ trashCompressed = <<0, 0>>
+/\ trashUncompressed = <<0, 0>>
+/\ trashCapacity = <<3, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+12: <AllowUser line 953, col 14 to line 964, col 75 of module trash_multiple>
+/\ trapDoorOpen = <<FALSE, FALSE>>
+/\ binSensor = <<[sensor |-> "idle"], [sensor |-> "idle"]>>
+/\ serverRequests = <<>>
+/\ truckCommands = <<>>
+/\ binCalled = <<FALSE, FALSE>>
+/\ selectedBin = (3 :> 1 @@ 4 :> 0)
+/\ truckBusy = (5 :> FALSE @@ 6 :> FALSE)
+/\ ramExtended = <<FALSE, FALSE>>
+/\ trapDestroyed = <<FALSE, FALSE>>
+/\ userTrash = (3 :> 1 @@ 4 :> 0)
+/\ command = (5 :> [bin |-> 1, command |-> "idle"] @@ 6 :> [bin |-> 1, command |-> "idle"])
+/\ resp = [user |-> 3, permission |-> TRUE]
+/\ pc = ( 0 :> "WaitBin1" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserAwaitScanResponse" @@
+  4 :> "UserNextIteration" @@
+  5 :> "TruckStart" @@
+  6 :> "TruckStart" @@
+  7 :> "ServerNextIteration" )
+/\ serverResponses = <<>>
+/\ grantedPerm = {}
+/\ permissions = (3 :> <<>> @@ 4 :> <<>>)
+/\ req = [user |-> 3]
+/\ outerDoorLocked = <<TRUE, TRUE>>
+/\ scans = <<>>
+/\ binCommand = << [command |-> "change_outer_lock", open |-> TRUE],
+   [command |-> "finished", open |-> FALSE] >>
+/\ scan = [bin |-> 1, user |-> 3]
+/\ outerDoorOpen = <<FALSE, FALSE>>
+/\ truckCommand = ( 5 :> [bin |-> 1, command |-> "emptied"] @@
+  6 :> [bin |-> 1, command |-> "emptied"] )
+/\ perm = ( 3 :> [bin |-> 0, user |-> 0, granted |-> FALSE] @@
+  4 :> [bin |-> 0, user |-> 0, granted |-> FALSE] )
+/\ trashInTop = <<0, 0>>
+/\ trashCompressed = <<0, 0>>
+/\ trashUncompressed = <<0, 0>>
+/\ trashCapacity = <<3, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+13: <BinWaitForCommand line 538, col 28 to line 624, col 56 of module trash_multiple>
+/\ trapDoorOpen = <<FALSE, FALSE>>
+/\ binSensor = <<[sensor |-> "idle"], [sensor |-> "idle"]>>
+/\ serverRequests = <<>>
+/\ truckCommands = <<>>
+/\ binCalled = <<FALSE, FALSE>>
+/\ selectedBin = (3 :> 1 @@ 4 :> 0)
+/\ truckBusy = (5 :> FALSE @@ 6 :> FALSE)
+/\ ramExtended = <<FALSE, FALSE>>
+/\ trapDestroyed = <<FALSE, FALSE>>
+/\ userTrash = (3 :> 1 @@ 4 :> 0)
+/\ command = (5 :> [bin |-> 1, command |-> "idle"] @@ 6 :> [bin |-> 1, command |-> "idle"])
+/\ resp = [user |-> 3, permission |-> TRUE]
+/\ pc = ( 0 :> "WaitBin1" @@
+  1 :> "BinCommandFinished" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserAwaitScanResponse" @@
+  4 :> "UserNextIteration" @@
+  5 :> "TruckStart" @@
+  6 :> "TruckStart" @@
+  7 :> "ServerNextIteration" )
+/\ serverResponses = <<>>
+/\ grantedPerm = {}
+/\ permissions = (3 :> <<>> @@ 4 :> <<>>)
+/\ req = [user |-> 3]
+/\ outerDoorLocked = <<FALSE, TRUE>>
+/\ scans = <<>>
+/\ binCommand = << [command |-> "change_outer_lock", open |-> TRUE],
+   [command |-> "finished", open |-> FALSE] >>
+/\ scan = [bin |-> 1, user |-> 3]
+/\ outerDoorOpen = <<FALSE, FALSE>>
+/\ truckCommand = ( 5 :> [bin |-> 1, command |-> "emptied"] @@
+  6 :> [bin |-> 1, command |-> "emptied"] )
+/\ perm = ( 3 :> [bin |-> 0, user |-> 0, granted |-> FALSE] @@
+  4 :> [bin |-> 0, user |-> 0, granted |-> FALSE] )
+/\ trashInTop = <<0, 0>>
+/\ trashCompressed = <<0, 0>>
+/\ trashUncompressed = <<0, 0>>
+/\ trashCapacity = <<3, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+14: <BinCommandFinished line 626, col 29 to line 639, col 57 of module trash_multiple>
+/\ trapDoorOpen = <<FALSE, FALSE>>
+/\ binSensor = <<[sensor |-> "idle"], [sensor |-> "idle"]>>
+/\ serverRequests = <<>>
+/\ truckCommands = <<>>
+/\ binCalled = <<FALSE, FALSE>>
+/\ selectedBin = (3 :> 1 @@ 4 :> 0)
+/\ truckBusy = (5 :> FALSE @@ 6 :> FALSE)
+/\ ramExtended = <<FALSE, FALSE>>
+/\ trapDestroyed = <<FALSE, FALSE>>
+/\ userTrash = (3 :> 1 @@ 4 :> 0)
+/\ command = (5 :> [bin |-> 1, command |-> "idle"] @@ 6 :> [bin |-> 1, command |-> "idle"])
+/\ resp = [user |-> 3, permission |-> TRUE]
+/\ pc = ( 0 :> "WaitBin1" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserAwaitScanResponse" @@
+  4 :> "UserNextIteration" @@
+  5 :> "TruckStart" @@
+  6 :> "TruckStart" @@
+  7 :> "ServerNextIteration" )
+/\ serverResponses = <<>>
+/\ grantedPerm = {}
+/\ permissions = (3 :> <<>> @@ 4 :> <<>>)
+/\ req = [user |-> 3]
+/\ outerDoorLocked = <<FALSE, TRUE>>
+/\ scans = <<>>
+/\ binCommand = << [command |-> "finished", open |-> TRUE],
+   [command |-> "finished", open |-> FALSE] >>
+/\ scan = [bin |-> 1, user |-> 3]
+/\ outerDoorOpen = <<FALSE, FALSE>>
+/\ truckCommand = ( 5 :> [bin |-> 1, command |-> "emptied"] @@
+  6 :> [bin |-> 1, command |-> "emptied"] )
+/\ perm = ( 3 :> [bin |-> 0, user |-> 0, granted |-> FALSE] @@
+  4 :> [bin |-> 0, user |-> 0, granted |-> FALSE] )
+/\ trashInTop = <<0, 0>>
+/\ trashCompressed = <<0, 0>>
+/\ trashUncompressed = <<0, 0>>
+/\ trashCapacity = <<3, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+15: <WaitBin1 line 966, col 13 to line 977, col 74 of module trash_multiple>
+/\ trapDoorOpen = <<FALSE, FALSE>>
+/\ binSensor = <<[sensor |-> "idle"], [sensor |-> "idle"]>>
+/\ serverRequests = <<>>
+/\ truckCommands = <<>>
+/\ binCalled = <<FALSE, FALSE>>
+/\ selectedBin = (3 :> 1 @@ 4 :> 0)
+/\ truckBusy = (5 :> FALSE @@ 6 :> FALSE)
+/\ ramExtended = <<FALSE, FALSE>>
+/\ trapDestroyed = <<FALSE, FALSE>>
+/\ userTrash = (3 :> 1 @@ 4 :> 0)
+/\ command = (5 :> [bin |-> 1, command |-> "idle"] @@ 6 :> [bin |-> 1, command |-> "idle"])
+/\ resp = [user |-> 3, permission |-> TRUE]
+/\ pc = ( 0 :> "WaitDoorClosed" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserAwaitScanResponse" @@
+  4 :> "UserNextIteration" @@
+  5 :> "TruckStart" @@
+  6 :> "TruckStart" @@
+  7 :> "ServerNextIteration" )
+/\ serverResponses = <<>>
+/\ grantedPerm = {}
+/\ permissions = (3 :> <<[bin |-> 1, user |-> 3, granted |-> TRUE]>> @@ 4 :> <<>>)
+/\ req = [user |-> 3]
+/\ outerDoorLocked = <<FALSE, TRUE>>
+/\ scans = <<>>
+/\ binCommand = << [command |-> "finished", open |-> TRUE],
+   [command |-> "finished", open |-> FALSE] >>
+/\ scan = [bin |-> 1, user |-> 3]
+/\ outerDoorOpen = <<FALSE, FALSE>>
+/\ truckCommand = ( 5 :> [bin |-> 1, command |-> "emptied"] @@
+  6 :> [bin |-> 1, command |-> "emptied"] )
+/\ perm = ( 3 :> [bin |-> 0, user |-> 0, granted |-> FALSE] @@
+  4 :> [bin |-> 0, user |-> 0, granted |-> FALSE] )
+/\ trashInTop = <<0, 0>>
+/\ trashCompressed = <<0, 0>>
+/\ trashUncompressed = <<0, 0>>
+/\ trashCapacity = <<3, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+16: <UserAwaitScanResponse line 674, col 32 to line 696, col 69 of module trash_multiple>
+/\ trapDoorOpen = <<FALSE, FALSE>>
+/\ binSensor = <<[sensor |-> "idle"], [sensor |-> "idle"]>>
+/\ serverRequests = <<>>
+/\ truckCommands = <<>>
+/\ binCalled = <<FALSE, FALSE>>
+/\ selectedBin = (3 :> 1 @@ 4 :> 0)
+/\ truckBusy = (5 :> FALSE @@ 6 :> FALSE)
+/\ ramExtended = <<FALSE, FALSE>>
+/\ trapDestroyed = <<FALSE, FALSE>>
+/\ userTrash = (3 :> 1 @@ 4 :> 0)
+/\ command = (5 :> [bin |-> 1, command |-> "idle"] @@ 6 :> [bin |-> 1, command |-> "idle"])
+/\ resp = [user |-> 3, permission |-> TRUE]
+/\ pc = ( 0 :> "WaitDoorClosed" @@
+  1 :> "BinWaitForCommand" @@
+  2 :> "BinWaitForCommand" @@
+  3 :> "UserOpenDoor" @@
+  4 :> "UserNextIteration" @@
+  5 :> "TruckStart" @@
+  6 :> "TruckStart" @@
+  7 :> "ServerNextIteration" )
+/\ serverResponses = <<>>
+/\ grantedPerm = {}
+/\ permissions = (3 :> <<>> @@ 4 :> <<>>)
+/\ req = [user |-> 3]
+/\ outerDoorLocked = <<FALSE, TRUE>>
+/\ scans = <<>>
+/\ binCommand = << [command |-> "finished", open |-> TRUE],
+   [command |-> "finished", open |-> FALSE] >>
+/\ scan = [bin |-> 1, user |-> 3]
+/\ outerDoorOpen = <<FALSE, FALSE>>
+/\ truckCommand = ( 5 :> [bin |-> 1, command |-> "emptied"] @@
+  6 :> [bin |-> 1, command |-> "emptied"] )
+/\ perm = ( 3 :> [bin |-> 1, user |-> 3, granted |-> TRUE] @@
+  4 :> [bin |-> 0, user |-> 0, granted |-> FALSE] )
+/\ trashInTop = <<0, 0>>
+/\ trashCompressed = <<0, 0>>
+/\ trashUncompressed = <<0, 0>>
+/\ trashCapacity = <<3, 3>>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(16) at 2026-10-08 12:29:45: 13,115 states generated (426,966 s/min), 4,115 distinct states found (133,966 ds/min), 521 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2199:0 @!@!@
+13115 states generated, 4115 distinct states found, 521 states left on queue.
+@!@!@ENDMSG 2199 @!@!@
+@!@!@STARTMSG 2194:0 @!@!@
+The depth of the complete state graph search is 16.
+@!@!@ENDMSG 2194 @!@!@
+@!@!@STARTMSG 2268:0 @!@!@
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 6 and the 95th percentile is 4).
+@!@!@ENDMSG 2268 @!@!@
+@!@!@STARTMSG 2186:0 @!@!@
+Finished in 1848ms at (2026-10-08 12:29:45)
+@!@!@ENDMSG 2186 @!@!@
